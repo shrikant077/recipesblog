@@ -1,0 +1,66 @@
+<section class="flex flex-col justify-center items-start mx-auto my-4 w-[80vw]">
+    <section class="flex items-center w-[80vw] my-2">
+        <img class="border-2 rounded-xl w-58" src="{{recipe.img}}" alt="{{recipe.name}}">
+        <section>
+            <p class="text-gray-700 my-2 md:my-4 mx-10">{{recipe.name}}</p>
+            <p class="text-gray-700 my-2 md:my-4 mx-10">{{recipe.cuisine}}</p>
+            <p class="text-gray-700 my-2 md:my-4 mx-10">{{recipe.category}}</p>
+            <section class="flex my-2 md:my-4">
+                <p class="text-gray-700 mx-10">{{recipe.difficulty}}</p>
+                <p class="text-gray-700">{{recipe.cookingTime}}</p>
+            </section>
+        </section>
+    </section>
+    <section class="text-gray-700 my-4">
+        <p>{{recipe.description}}</p>
+    </section>
+    <section class="my-2">
+        <h4 class="text-gray-700 mx-2">Tags</h4>
+        <section class="my-2 p-2 flex flex-wrap rounded-lg border border-gray-700">
+            @for(tag of recipe.tags; track tag){
+                <p class="text-sm border border-gray-700 text-gray-700 rounded-3xl py-2 m-1 px-3">{{tag.trim()}}</p>
+            }
+        </section>
+    </section>
+    <section class="my-2">
+        <h4 class="text-gray-700 mx-2">Ingredients</h4>
+        <section class="my-2 p-2 flex flex-wrap rounded-lg border border-gray-700">
+            @for(ingre of recipe.ingredients; track ingre){
+                <p class="text-sm border border-gray-700 text-gray-700 rounded-3xl py-2 m-1 px-3">{{ingre.trim()}}</p>
+            }
+        </section>
+    </section>
+    <p class="text-gray-700 my-2">Dietary Restrictions: {{recipe.dietaryRestrictions}}</p>
+    <section class="my-2">
+        <button id="favRec" class="bg-[#00CC6A] px-5 py-1 text-white rounded-2xl font-semibold my-4 hover:cursor-pointer" (click)="removeFab(recipe.id)">ADD TO FAVORITES</button>
+    </section>
+    <section class="border-gray-700 my-2 w-[80vw] mx-auto">
+        <hr class="border-gray-700">
+    </section>
+    <section>
+        <h4 class="text-gray-700 mx-2">Comments</h4>
+        
+<!-- <section class="w-full my-4 mx-2">
+    <h4 class="text-gray-700 mb-2">Rate this recipe:</h4>
+    <div class="flex items-center gap-2">
+      <ng-container *ngFor="let star of [1,2,3,4,5]">
+        <span
+          class="text-2xl cursor-pointer"
+          [class.text-yellow-400]="star <= selectedRating"
+          (click)="setRating(star)"
+        >★</span>
+      </ng-container>
+      <p class="ml-2 text-gray-600">{{ selectedRating }} / 5</p>
+    </div>
+  </section> -->
+
+  <section *ngFor="let comment of comments" class="bg-white p-5 my-2 rounded-md flex items-center">
+    <img src="images/dishdp.svg" alt="dp">
+    <section class="ml-4">
+        <img src="images/stars.svg" alt="stars">
+        <p class="text-gray-800">{{ comment }}</p>
+    </section>
+  </section>
+  
+    </section>
+</section>

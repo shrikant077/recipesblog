@@ -1,0 +1,152 @@
+<section class="mx-auto my-10">
+    <section class="flex justify-between items-center mx-10 relative">
+        <h4 class="font-semibold">Most Popular Dishes</h4>
+        <section class="flex bg-white p-1 rounded-2xl w-22 justify-center hover:cursor-pointer" (click)="toggleFilter()">
+            <img src="/images/filter.svg" alt="filter" class="border-r-1 border-gray-400 w-7">
+            <img src="/images/sort.svg" alt="sort" class="w-7">
+        </section>
+
+        <section id="filter" class="hidden bg-white rounded-xl p-4 shadow-lg w-52 absolute z-1 right-0 top-9">
+            <h2 class="text-gray-700 font-bold border-b pb-2 mb-4">FILTERS</h2>
+          
+            <select class="w-40 mb-3 p-1 border border-gray-300 rounded-md text-gray-600" [(ngModel)]="filters.cuisine" (change)="applyFilters()">
+                <option value="">Cuisine type</option>
+                <option value="Indian">Indian</option>
+                <option value="Italian">Italian</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Chinese">Chinese</option>
+                <option value="American">American</option>
+                <option value="French">French</option>
+                <option value="Thai">Thai</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Middle Eastern">Middle Eastern</option>
+                <option value="Mediterranean">Mediterranean</option>
+            </select>
+          
+            <select class="w-40 mb-3 p-1 border border-gray-300 rounded-md text-gray-600" [(ngModel)]="filters.category" (change)="applyFilters()">
+                <option value="">Category</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Snack">Snack</option>
+                <option value="Dessert">Dessert</option>
+            </select>
+          
+            <select class="w-40 mb-3 p-1 border border-gray-300 rounded-md text-gray-600" [(ngModel)]="filters.cookingTime" (change)="applyFilters()">
+              <option value="">Cooking time in minutes</option>
+              <option value="15">≤ 15 mins</option>
+              <option value="30">≤ 30 mins</option>
+              <option value="60">≤ 60 mins</option>
+            </select>
+          
+            <select class="w-40 mb-5 p-1 border border-gray-300 rounded-md text-gray-600" [(ngModel)]="filters.difficulty" (change)="applyFilters()">
+                <option value="">Difficulty level</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+          
+            <h2 class="text-gray-700 font-bold border-b pb-2 mb-2">SORT</h2>
+            <section class="flex flex-col gap-2">
+              <label class="inline-flex items-center text-gray-600">
+                <input type="radio" name="sort" value="popularity" [(ngModel)]="filters.sortBy" class="mr-2 accent-black" (change)="applyFilters()"/>
+                Popularity
+              </label>
+              <label class="inline-flex items-center text-gray-600">
+                <input type="radio" name="sort" value="latest" [(ngModel)]="filters.sortBy" class="mr-2 accent-black" (change)="applyFilters()"/>
+                Latest
+              </label>
+            </section>
+          </section>
+          
+
+    </section>
+    <section class="flex flex-wrap justify-center my-5">
+        @if(filteredRecipes.length==0){
+            <p>No Recipes Found :(</p>
+        }
+        @for(recipe of filteredRecipes; track recipe; let i=$index){
+            <article class="rounded-xl m-4 bg-white shadow-[0px_4px_4px_0px_#00000040] w-53.5 relative hover:cursor-pointer" >
+                <img src="{{recipe.img}}" alt="dish" (click)="openRecipe(recipe.id,recipe.name)">
+                <i id="fav-{{i}}" class="fa-regular fa-heart absolute top-2 right-2 bg-white p-1 rounded-full  hover:cursor-pointer" (click)="removeFab(recipe.id, i)"></i>
+                <section class="p-2" (click)="openRecipe(recipe.id,recipe.name)">
+                    <section class="flex justify-between items-center">
+                        <section class="ml-1">
+                            <p class="font-bold">{{recipe.name}}</p>
+                            <p class="font-semibold">{{recipe.category}}</p>
+                        </section>
+                        <section (click)="openProfile(recipe.userid)">
+                            <img src="{{recipe.dishdp}}" alt="dp">
+                        </section>
+                    </section>
+                    <section class="my-2 flex flex-wrap">
+                        @for(tag of recipe.tags; track tag){
+                            <p class="text-xs border border-gray-300 rounded-lg p-1 m-1 px-3">{{tag.trim()}}</p>
+                        }
+                    </section>
+                    <section class="flex p-1 items-center ml-1">
+                        <img src="/images/stars.svg" alt="stars">
+                        <p>{{recipe.reviews}}</p>
+                    </section>
+                </section>
+            </article>
+        }
+    </section>
+</section>
+
+@if(preference){
+    <section class="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <section class="bg-white rounded-2xl p-8 w-[400px] shadow-lg text-center">
+          <h2 class="text-green-600 text-2xl font-bold mb-6">SET PREFERENCES</h2>
+      
+          <section class="space-y-4 text-left">
+            <select class="w-full px-4 py-2 border border-gray-300 text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" [(ngModel)]="filters.cuisine">
+                <option value="">Cuisine type</option>
+                <option value="Indian">Indian</option>
+                <option value="Italian">Italian</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Chinese">Chinese</option>
+                <option value="American">American</option>
+                <option value="French">French</option>
+                <option value="Thai">Thai</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Middle Eastern">Middle Eastern</option>
+                <option value="Mediterranean">Mediterranean</option>
+            </select>
+      
+            <select class="w-full px-4 py-2 border border-gray-300 text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" [(ngModel)]="filters.category">
+                <option value="">Category</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Snack">Snack</option>
+                <option value="Dessert">Dessert</option>
+            </select>
+      
+            <select class="w-full px-4 py-2 border border-gray-300 text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" [(ngModel)]="filters.cookingTime">
+                <option value="">Cooking time in minutes</option>
+                <option value="15">≤ 15 mins</option>
+                <option value="30">≤ 30 mins</option>
+                <option value="60">≤ 60 mins</option>
+            </select>
+      
+            <select class="w-full px-4 py-2 border border-gray-300 text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" [(ngModel)]="filters.difficulty">
+                <option value="">Difficulty level</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+          </section>
+      
+          <section class="flex justify-center gap-4 mt-8">
+            <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full transition" (click)="applyFilters(); preference=false">
+              SUBMIT
+            </button>
+            <button class="border border-green-500 text-green-500 hover:bg-green-50 font-semibold py-2 px-6 rounded-full transition" (click)="preference=false">
+              CANCEL
+            </button>
+          </section>
+        </section>
+      </section>
+}
+  

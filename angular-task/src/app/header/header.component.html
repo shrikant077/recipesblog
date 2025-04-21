@@ -1,0 +1,53 @@
+<header class="sticky top-0 z-10 shadow-md flex justify-between items-center bg-[#444444] px-[12px] py-[7px]">
+    <section class="flex justify-center items-center">
+        <i *ngIf="!hammenu else elseblock" (click)="toggleMenu()" class="fa-solid fa-bars text-3xl text-white hover:cursor-pointer"></i>
+        <ng-template #elseblock>
+            <i (click)="toggleMenu()" class="fa-solid fa-xmark text-4xl text-white hover:cursor-pointer"></i>
+        </ng-template>
+        <p class="text-2xl font-semibold ml-2 hover:cursor-pointer" routerLink="/">LOGO</p>
+    </section>
+    <section class="search">
+        <input class="p-[7px] bg-white rounded-3xl border-0 w-[50vw] text-sm text-gray-500 pl-6 italic" type="text"
+            name="" id="" placeholder="Search by recipes, cuisine, category, tags..." [(ngModel)]="searchQuery" (keydown)="onSearch($event)">
+    </section>
+    <section id="profile-dp" class="bg-[lightskyblue] rounded-3xl py-[12px] px-[20px] hover:cursor-pointer"
+        (click)="toggleLog()">
+        @if(imgUploaded){
+        <img src="" alt="">
+        }
+        @else{
+        <p class="dp2">{{loggedInUser? loggedInUser.firstName.charAt(0) : 'G'}}</p>
+        }
+        <section id="log"
+            class="hidden absolute bg-white mr-2 pt-5 pb-5 pl-3 w-30 rounded-xl right-0 top-14.5 shadow-md text-sm">
+            @if(loggedInUser){
+                <ul>
+                    <li class="pb-2 hover:cursor-pointer"><a routerLink='/user/{{loggedInUser.id}}/profile'>Profile</a></li>
+                    <li class="hover:cursor-pointer" (click)="logout()">Logout</li>
+                </ul>
+            }
+            @else{
+                <ul>
+                    <li class="pb-2 hover:cursor-pointer"><a routerLink='/login'>Login</a></li>
+                    <li class="hover:cursor-pointer"><a routerLink='/register'>Register</a></li>
+                </ul>
+            }            
+
+        </section>
+    </section>
+</header>
+@if(hammenu){
+    <section class="fixed top-1 h-[100vh] w-[100vw] text-center bg-black/70 z-1">
+        <section class="side_menu fixed bg-[#444444] w-70 h-[100vh] text-white">
+            <section class="text-start absolute top-40 left-7">
+                <ul>
+                    <a [routerLink]="user ? ['/user', user.id, 'addrecipe'] : ['/login']"><li class="flex items-baseline border-b-1 border-gray-400 py-2 hover:cursor-pointer" (click)="hammenu=false">SUBMIT YOUR RECIPE<img class="w-3 ml-2" src="/images/rectangle.svg" alt="rectangle"></li></a>
+                    <a [routerLink]="user? ['/user', user.id, 'favorites'] : ['/login']"><li class="flex items-baseline border-b-1 border-gray-400 py-2 hover:cursor-pointer" (click)="hammenu=false">VIEW FAVORITES  <img class="w-3 ml-2" src="/images/rectangle.svg" alt="rectangle"></li></a>
+                    <a [routerLink]="user? ['/user', user.id, 'myrecipes'] : ['/login']"><li class="flex items-baseline border-b-1 border-gray-400 py-2 hover:cursor-pointer" (click)="hammenu=false">VIEW YOUR RECIPES  <img class="w-3 ml-2" src="/images/rectangle.svg" alt="rectangle"></li></a>
+                    <a [routerLink]="user? ['/user', user.id, 'recommended'] : ['/login']"><li class="flex items-baseline border-b-1 border-gray-400 py-2 hover:cursor-pointer" (click)="hammenu=false">RECOMMENDED RECIPES  <img class="w-3 ml-2" src="/images/rectangle.svg" alt="rectangle"></li></a>
+                    <li class="flex items-baseline py-2 hover:cursor-pointer" (click)="hammenu=false; preference();">PREFERENCES  <img class="w-3 ml-2" src="/images/rectangle.svg" alt="rectangle"></li>
+                </ul>
+            </section>
+        </section>
+    </section>
+}

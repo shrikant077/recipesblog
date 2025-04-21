@@ -1,0 +1,13 @@
+<section class="fixed top-1 h-[100vh] w-[100vw] text-center bg-black/70 z-1">
+    <section class="side_menu fixed bg-[#444444] w-70 h-[100vh] text-white">
+        <section class="text-start absolute top-40 left-7">
+            <ul>
+                <a [routerLink]="user ? ['/user', user.id, 'addrecipe'] : ['/login']"><li class="flex items-baseline border-b-1 border-gray-400 py-2 hover:cursor-pointer">SUBMIT YOUR RECIPE<img class="w-3 ml-2" src="/images/rectangle.svg" alt="rectangle"></li></a>
+                <a [routerLink]="user? ['/user', user.id, 'favorites'] : ['/login']"><li class="flex items-baseline border-b-1 border-gray-400 py-2 hover:cursor-pointer">VIEW FAVORITES  <img class="w-3 ml-2" src="/images/rectangle.svg" alt="rectangle"></li></a>
+                <a [routerLink]="user? ['/user', user.id, 'myrecipes'] : ['/login']"><li class="flex items-baseline border-b-1 border-gray-400 py-2 hover:cursor-pointer">VIEW YOUR RECIPES  <img class="w-3 ml-2" src="/images/rectangle.svg" alt="rectangle"></li></a>
+                <a [routerLink]="user? ['/user', user.id, 'recommended'] : ['/login']"><li class="flex items-baseline border-b-1 border-gray-400 py-2 hover:cursor-pointer">RECOMMENDED RECIPES  <img class="w-3 ml-2" src="/images/rectangle.svg" alt="rectangle"></li></a>
+                <li class="flex items-baseline py-2 hover:cursor-pointer">PREFERENCES  <img class="w-3 ml-2" src="/images/rectangle.svg" alt="rectangle"></li>
+            </ul>
+        </section>
+    </section>
+</section>

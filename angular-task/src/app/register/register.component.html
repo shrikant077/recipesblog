@@ -1,0 +1,101 @@
+<section class="fixed flex justify-center items-center top-1 h-[100vh] w-[100vw] text-center bg-black/70" >
+    <section
+        class="bg-white fixed top-25 md:top-30 w-80 h-140 md:w-160 md:h-110 flex flex-col justify-center items-center rounded-2xl">
+        <section class="md:w-125">
+            <p class="justify-self-start text-[#00CC6A] text-2xl font-bold my-5">REGISTRATION</p>
+        </section>
+        <form #registerForm="ngForm" (ngSubmit)="addUser(registerForm.value)">
+            <section class="md:flex md:flex-wrap md:mx-auto md:w-130 ">
+                <input type="text" placeholder="First Name"
+                    class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 w-60" name="firstName" ngModel required>
+                <input type="text" placeholder="Last Name"
+                    class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 w-60" name="lastName" ngModel required>
+                <input type="email" placeholder="Email Id"
+                    class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 w-60" name="email" ngModel required>
+            </section>
+            <section class="md:flex md:flex-wrap md:mx-auto md:w-130">
+                <select class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 w-60" name="country"
+                    id="country" #country="ngModel" ngModel required>
+                    <option value="">Country</option>
+                    <option value="India">India</option>
+                    <option value="Australia">Australia</option>
+                    <option value="China">China</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Japan">Japan</option>
+                </select>
+
+                <select class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 w-60" name="region"
+                    id="region" ngModel required>
+                    <option value="">Region</option>
+                    @if(country.value=='Australia'){
+                    <option value="Sydney">Sydney</option>
+                    <option value="Melbourne">Melbourne</option>
+                    <option value="Brisbane">Brisbane</option>
+                    <option value="Perth">Perth</option>
+                    <option value="Adelaide">Adelaide</option>
+                    }
+                    @else if(country.value=='India'){
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Chennai">Chennai</option>
+                    }
+                    @else if(country.value=='China'){
+                    <option value="Beijing">Beijing</option>
+                    <option value="Shanghai">Shanghai</option>
+                    <option value="Guangzhou">Guangzhou</option>
+                    <option value="Chengdu">Chengdu</option>
+                    <option value="Shenzhen">Shenzhen</option>
+                    }
+                    @else if(country.value=='Germany'){
+                    <option value="Berlin">Berlin</option>
+                    <option value="Munich">Munich</option>
+                    <option value="Frankfurt">Frankfurt</option>
+                    <option value="Hamburg">Hamburg</option>
+                    <option value="Cologne">Cologne</option>
+                    }
+                    @else{
+                    @if(country.value=='Japan'){
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Osaka">Osaka</option>
+                    <option value="Kyoto">Kyoto</option>
+                    <option value="Yokohama">Yokohama</option>
+                    <option value="Nagoya">Nagoya</option>
+                    }
+                    }
+                </select>
+            </section>
+            <section class="md:flex md:flex-wrap md:mx-auto md:w-130 ">
+                <input type="password" placeholder="Password"
+                    class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 w-60" name="password" ngModel required>
+                <section class="flex flex-col relative">
+                    <input type="password" placeholder="Confirm Password"
+                    class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 w-60" name="confirmpassword" ngModel required>
+                    <span *ngIf="registerForm.value['confirmpassword'] && registerForm.value['password']!=registerForm.value['confirmpassword']" class="text-sm text-red-700 italics absolute -bottom-3 left-4">Password does not match!</span>
+                </section>
+            </section>
+            <section class="md:mx-auto md:w-130">
+                <section class="md:justify-self-start md:ml-1">
+                    <label for="profile"
+                        class="inline-block my-2 mx-2 font-semibold rounded-lg hover:cursor-pointer">Upload
+                        Image</label>
+                    <input type="file" id="profile" accept="image/*" class="hidden">
+                    <i class="fa-solid fa-upload"></i>
+                </section>
+            </section>
+            <section>
+                <button
+                    class="bg-[#00CC6A] mx-2 px-5 py-1 text-white border-2 rounded-2xl font-semibold my-4 hover:cursor-pointer">REGISTER</button>
+                <button
+                    class="text-[#00CC6A] mx-2 px-4 py-1 border-[1.5px] rounded-2xl font-semibold my-4 hover:cursor-pointer"><a routerLink="/">CANCEL</a></button>
+            </section>
+        </form>
+    </section>
+</section>
+<section id="register-alert" class="fixed top-20 right-1 z-10 hidden">
+    <section class="flex items-center p-2 bg-[#00CC6A] w-fit rounded-lg shadow text-white">
+        <i class="fa-solid fa-triangle-exclamation text-black"></i>
+        <p class="m-2 ml-1 text-lg font-semibold">User Exists!</p>
+    </section>
+</section>

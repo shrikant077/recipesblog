@@ -1,0 +1,66 @@
+<section class="bg-white flex flex-col px-3">
+    <section>
+        <p class="text-[#00CC6A] text-2xl font-bold my-5 mx-2">SUBMIT YOUR RECIPE</p>
+    </section>
+    <form #recipeForm="ngForm" (ngSubmit)="addRecipe(recipeForm.value)" class="flex flex-col">
+        <section class="border w-max rounded-md m-2 border-black p-1 text-gray-500">
+            <input type="text" placeholder="Recipe name" class="border-r-1 md:w-130 outline-0" name="name" ngModel required>
+            <label for="recipe"
+                class="inline-block my-2 mx-2 font-semibold rounded-lg hover:cursor-pointer text-sm">Upload
+                Image</label>
+            <input type="file" id="recipe" accept="image/*" class="hidden">
+            <i class="fa-solid fa-upload"></i>
+        </section>
+        <textarea name="description" id="desc" placeholder="Recipe description and steps"
+            class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 md:w-162 h-50" name="description" ngModel required></textarea>
+        <select name="cuisine" id="ctype" class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 w-80" ngModel required>
+            <option value="">Cuisine type</option>
+            <option value="Indian">Indian</option>
+            <option value="Italian">Italian</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Chinese">Chinese</option>
+            <option value="American">American</option>
+            <option value="French">French</option>
+            <option value="Thai">Thai</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Middle Eastern">Middle Eastern</option>
+            <option value="Mediterranean">Mediterranean</option>
+        </select>
+        <select name="category" id="category" class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 w-80" ngModel required>
+            <option value="">Category</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Snack">Snack</option>
+            <option value="Dessert">Dessert</option>
+        </select>
+        <input type="text" placeholder="Mention tags separated by comma,"
+            class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 md:w-162" name="tags" ngModel required>
+        <input type="text" placeholder="Add Ingredients"
+            class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 md:w-162" name="ingredients" ngModel required>
+        
+        <input type="text" name="cookingTime" id="ctime" placeholder="Cooking time in minutes"
+            class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 w-80" ngModel required>
+        <select name="difficulty" id="difficulty"
+            class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 w-80" ngModel required>
+            <option value="">Difficulty level</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+        <input type="text" placeholder="Mention dietary restrictions"
+            class="border border-black rounded-md my-2 mx-2 p-1 text-gray-500 md:w-162" name="dietaryRestrictions" ngModel>
+        <section class="my-8">
+            <button
+                class="bg-[#00CC6A] mx-2 px-5 py-1 text-white border-2 rounded-2xl font-semibold my-4" (click)="handleSuccess()">SUBMIT</button>
+            <button class="text-[#00CC6A] mx-2 px-4 py-1 border-[1.5px] rounded-2xl font-semibold my-4"><a
+                    routerLink="/">CANCEL</a></button>
+        </section>
+    </form>
+</section>
+<section id="submit-alert" class="fixed top-20 right-1 z-10 hidden">
+    <section class="flex items-center p-2 bg-[#00CC6A] w-fit rounded-lg shadow text-white">
+        <i class="fa-solid fa-circle-check m-2 text-black"></i>
+        <p class="m-2 ml-0 text-lg font-semibold">Recipe Uploaded Successfully</p>
+    </section>
+</section>

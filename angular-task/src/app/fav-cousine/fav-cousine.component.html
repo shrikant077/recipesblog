@@ -1,0 +1,13 @@
+<section class="p-5">
+    <h4 class="text-center font-semibold p-5">What are your favorite cuisines?</h4>
+    <section id="fav-scroll" class="flex items-center overflow-x-scroll">
+      @for (cuisine of cuisines; track cuisine) {
+        <section
+          class="bg-[url('/images/foodicon.svg')] h-[100px] w-[100px] bg-no-repeat p-10 hover:cursor-pointer text-xs m-2 flex justify-center items-center text-white font-semibold"
+        >
+        <p>{{cuisine}}</p>
+        </section>
+      }
+    </section>
+  </section>
+  

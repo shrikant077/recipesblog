@@ -1,0 +1,126 @@
+<form #updateForm="ngForm" class="flex flex-col justify-center items-start mx-auto my-4 w-[80vw]"
+    (ngSubmit)="handleSubmit(updateForm.value)">
+    <section class="flex flex-col md:flex-row md:items-center w-[80vw] my-2">
+        <img class="border-2 rounded-xl w-58" src="{{recipe.img}}" alt="{{recipe.name}}">
+        <section class="flex flex-col md:ml-6 w-50">
+            <input type="text" class="border border-gray-700 p-1 rounded-lg text-gray-700 mt-4 md:mt-0 my-1" name="name"
+                [ngModel]="recipe.name">
+
+            <select name="cuisine" id="ctype" class="border border-gray-700 p-1 rounded-lg text-gray-700 my-1"
+                [ngModel]="recipe.cuisine">
+                <option value="">Cuisine type</option>
+                <option value="Indian">Indian</option>
+                <option value="Italian">Italian</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Chinese">Chinese</option>
+                <option value="American">American</option>
+                <option value="French">French</option>
+                <option value="Thai">Thai</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Middle Eastern">Middle Eastern</option>
+                <option value="Mediterranean">Mediterranean</option>
+            </select>
+
+            <select name="category" id="category" class="border border-gray-700 p-1 rounded-lg text-gray-700 my-1"
+                [ngModel]="recipe.category">
+                <option value="">Category</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Snack">Snack</option>
+                <option value="Dessert">Dessert</option>
+            </select>
+
+
+
+            <section class="flex my-1">
+
+                <select name="difficulty" id="difficulty"
+                    class="border border-gray-700 p-1 rounded-lg text-gray-700 w-25" [ngModel]="recipe.difficulty">
+                    <option value="">Difficulty level</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+
+                <input type="text" class="border border-gray-700 p-1 ml-1 rounded-lg text-gray-700 w-24"
+                    name="cookingTime" [ngModel]="recipe.cookingTime">
+            </section>
+        </section>
+    </section>
+    <section class="text-gray-700 my-4">
+        <textarea class="border border-gray-700 p-1 ml-1 rounded-lg text-gray-700 w-100 h-35 md:w-150"
+            name="description" id="desc" [ngModel]="recipe.description"></textarea>
+    </section>
+    <section class="my-2">
+        <section class="flex items-center">
+            <h4 class="text-gray-700 mx-2">Tags</h4>
+            <button type="button"
+                class="bg-[#00CC6A] text-white rounded-lg font-semibold px-3 pb-1 hover:cursor-pointer"
+                (click)="addTags()">+</button>
+            <section id="tag-area" class="hidden text-sm border border-gray-700 text-gray-700 rounded-3xl m-1 flex">
+                <input type="text" class="rounded-3xl p-2 w-67" placeholder="Add Tags" name="newtags" ngModel>
+                <button type="button" type="button"
+                    class="bg-[#00CC6A] text-white text-xs rounded-full font-semibold px-3 m-1  hover:cursor-pointer"
+                    (click)="updateTags(updateForm.value['newtags'])">Done</button>
+            </section>
+        </section>
+        <section class="my-2 p-2 flex flex-wrap rounded-lg border border-gray-700">
+            @for(tag of recipe.tags; let i=$index; track i){
+            <section class="text-sm border border-gray-700 text-gray-700 rounded-3xl m-1 pr-2 flex items-center">
+                <input type="text" class="py-2 px-3 w-30 rounded-3xl" name="tags-{{i}}" [(ngModel)]="recipe.tags[i]">
+                <button type="button"
+                    class=" border border-red-700  text-red-700 rounded-full font-semibold px-2 pb-1 hover:cursor-pointer"
+                    (click)="removeTag(tag)">x</button>
+            </section>
+            }
+        </section>
+    </section>
+    <section class="my-2">
+        <section class="flex items-center">
+            <h4 class="text-gray-700 mx-2">Ingredients</h4>
+            <button type="button"
+                class="bg-[#00CC6A] text-white rounded-lg font-semibold px-3 pb-1 hover:cursor-pointer"
+                (click)="addIngredients()">+</button>
+            <section id="ingre-area" class="hidden text-sm border border-gray-700 text-gray-700 rounded-3xl m-1 flex">
+                <input type="text" class="rounded-3xl p-2 w-55" placeholder="Add Ingredients" name="newingre" ngModel>
+                <button type="button"
+                    class="bg-[#00CC6A] text-white text-xs rounded-full font-semibold px-3 m-1  hover:cursor-pointer"
+                    (click)="updateIngre(updateForm.value['newingre'])">Done</button>
+            </section>
+        </section>
+        <section class="my-2 p-2 flex flex-wrap rounded-lg border border-gray-700">
+            @for(ingre of recipe.ingredients; let i=$index; track i){
+            <section class="text-sm border border-gray-700 text-gray-700 rounded-3xl m-1 pr-2 flex items-center">
+                <input type="text" class="py-2 px-3" name="ingredients-{{i}}" [(ngModel)]="recipe.ingredients[i]">
+                <button type="button"
+                    class=" border border-red-700  text-red-700 rounded-full font-semibold px-2 pb-1 hover:cursor-pointer"
+                    (click)="removeIngredient(ingre)">x</button>
+            </section>
+            }
+        </section>
+    </section>
+    <p class="text-gray-700 my-2">Dietary Restrictions:
+        <input type="text" class="text-sm border border-gray-700 text-gray-700 rounded-3xl py-2 m-1 px-3"
+            name="dietaryRestrictions" [ngModel]="recipe.dietaryRestrictions">
+    </p>
+    <section class="my-2">
+        <button type="submit"
+            class="bg-[#00CC6A] px-7 py-1 text-white rounded-2xl font-semibold my-4 mx-2 hover:cursor-pointer">UPDATE</button>
+        <button type="button"
+            class="border border-red-700 px-5 py-1 text-red-700 rounded-2xl font-semibold my-4 mx-2 hover:cursor-pointer"
+            (click)="deleteRecipe(recipe.id)">DELETE <i class="fa-solid fa-trash text-red-700 mx-1"></i></button>
+    </section>
+    <section class="border-gray-700 my-2 w-[80vw] mx-auto">
+        <hr class="border-gray-700">
+    </section>
+    <section>
+        <h4 class="text-gray-700 mx-2">Comments</h4>
+    </section>
+</form>
+<section id="update-alert" class="fixed top-20 right-1 z-10 hidden">
+    <section class="flex items-center p-2 bg-[#00CC6A] w-fit rounded-lg shadow text-white">
+        <i class="fa-solid fa-circle-check m-2 text-black"></i>
+        <p class="m-2 ml-0 text-lg font-semibold">Recipe Updated Successfully</p>
+    </section>
+</section>
