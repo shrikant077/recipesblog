@@ -1,0 +1,464 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "userid": "d5df",
+      "name": "Spaghetti Carbonara",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "Italian",
+      "category": "Lunch",
+      "difficulty": "Medium",
+      "cookingTime": "30 mins",
+      "tags": [
+        "quick",
+        "comfort food",
+        "classic"
+      ],
+      "ingredients": [
+        "200g spaghetti",
+        "100g pancetta",
+        "2 large eggs",
+        "50g grated Parmesan",
+        "Salt and black pepper"
+      ],
+      "description": "A creamy and delicious pasta dish. Step 1: Cook the spaghetti. Step 2: Fry pancetta until crisp. Step 3: Beat eggs and mix with cheese. Step 4: Combine hot pasta with pancetta and egg-cheese mix. Serve immediately.",
+      "dietaryRestrictions": "vegan"
+    },
+    {
+      "id": "2",
+      "userid": "d5df",
+      "name": "Chicken Tikka Masala",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "Indian",
+      "category": "Dinner",
+      "difficulty": "Hard",
+      "cookingTime": "60 mins",
+      "tags": [
+        "spicy",
+        "protein-rich",
+        "traditional"
+      ],
+      "ingredients": [
+        "500g chicken breast",
+        "200ml yogurt",
+        "2 tbsp tikka masala paste",
+        "1 onion",
+        "200ml tomato puree",
+        "Cream and spices"
+      ],
+      "description": "A flavorful curry with marinated chicken. Step 1: Marinate chicken in yogurt and spices. Step 2: Grill or fry until cooked. Step 3: Prepare sauce with onions, tomatoes, and cream. Step 4: Add chicken and simmer. Serve with rice.",
+      "dietaryRestrictions": "gluten-free"
+    },
+    {
+      "id": "3",
+      "userid": "d5df",
+      "name": "Vegan Buddha Bowl",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "Fusion",
+      "category": "Lunch",
+      "difficulty": "Easy",
+      "cookingTime": "25 mins",
+      "tags": [
+        "vegan",
+        "healthy",
+        "gluten-free"
+      ],
+      "ingredients": [
+        "1 cup cooked quinoa",
+        "1/2 cup chickpeas",
+        "1 avocado",
+        "1/2 cup steamed broccoli",
+        "1 tbsp tahini dressing"
+      ],
+      "description": "A nourishing bowl of veggies and grains. Step 1: Cook quinoa and steam broccoli. Step 2: Assemble bowl with chickpeas, avocado, and vegetables. Step 3: Drizzle tahini dressing and enjoy.",
+      "dietaryRestrictions": "vegan"
+    },
+    {
+      "id": "4",
+      "userid": "d5df",
+      "name": "Fish and Chips",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "British",
+      "category": "Dinner",
+      "difficulty": "Medium",
+      "cookingTime": "40 mins",
+      "tags": [
+        "crispy",
+        "comfort food",
+        "classic"
+      ],
+      "ingredients": [
+        "2 white fish fillets",
+        "1 cup flour",
+        "1 egg",
+        "1 cup breadcrumbs",
+        "3 potatoes",
+        "Oil for frying"
+      ],
+      "description": "A British classic meal. Step 1: Slice potatoes and fry until golden. Step 2: Coat fish in flour, egg, and breadcrumbs. Step 3: Fry fish until crispy. Serve hot with chips and tartar sauce.",
+      "dietaryRestrictions": null
+    },
+    {
+      "id": "5",
+      "userid": "d5df",
+      "name": "Shakshuka",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "Middle Eastern",
+      "category": "Breakfast",
+      "difficulty": "Easy",
+      "cookingTime": "20 mins",
+      "tags": [
+        "spicy",
+        "vegetarian",
+        "one-pan"
+      ],
+      "ingredients": [
+        "2 eggs",
+        "1 bell pepper",
+        "1 onion",
+        "2 tomatoes",
+        "Garlic, paprika, cumin",
+        "Fresh parsley"
+      ],
+      "description": "Poached eggs in a spicy tomato sauce. Step 1: Sauté onions and peppers. Step 2: Add tomatoes and spices. Step 3: Crack eggs into sauce and cook until set. Garnish with parsley and serve with bread.",
+      "dietaryRestrictions": "vegetarian"
+    },
+    {
+      "id": "6",
+      "userid": "d5df",
+      "name": "Pad Thai",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "Thai",
+      "category": "Dinner",
+      "difficulty": "Medium",
+      "cookingTime": "30 mins",
+      "tags": [
+        "noodles",
+        "sweet-sour",
+        "quick"
+      ],
+      "ingredients": [
+        "200g rice noodles",
+        "100g shrimp or tofu",
+        "1 egg",
+        "2 tbsp tamarind paste",
+        "2 tbsp fish sauce (or soy sauce)",
+        "Bean sprouts, peanuts, lime"
+      ],
+      "description": "A classic Thai stir-fry noodle dish. Step 1: Soak noodles. Step 2: Sauté protein and scramble egg. Step 3: Add noodles and sauce. Step 4: Toss with bean sprouts and garnish with peanuts and lime.",
+      "dietaryRestrictions": null
+    },
+    {
+      "id": "7",
+      "userid": "d5df",
+      "name": "Ratatouille",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "French",
+      "category": "Dinner",
+      "difficulty": "Medium",
+      "cookingTime": "45 mins",
+      "tags": [
+        "vegetarian",
+        "healthy",
+        "low-carb"
+      ],
+      "ingredients": [
+        "1 zucchini",
+        "1 eggplant",
+        "1 bell pepper",
+        "2 tomatoes",
+        "1 onion",
+        "Olive oil, herbs de Provence"
+      ],
+      "description": "A slow-cooked vegetable stew. Step 1: Slice all vegetables. Step 2: Sauté onion and layer the rest in a pan. Step 3: Bake or simmer until soft. Step 4: Serve warm with bread or rice.",
+      "dietaryRestrictions": "vegan"
+    },
+    {
+      "id": "8",
+      "userid": "u1",
+      "name": "Beef Stroganoff",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "Russian",
+      "category": "Dinner",
+      "difficulty": "Medium",
+      "cookingTime": "40 mins",
+      "tags": [
+        "creamy",
+        "protein-rich",
+        "comfort food"
+      ],
+      "ingredients": [
+        "300g beef strips",
+        "1 onion",
+        "1 cup mushrooms",
+        "1/2 cup sour cream",
+        "Beef broth, flour, butter"
+      ],
+      "description": "Creamy beef with mushrooms. Step 1: Sear beef. Step 2: Cook onions and mushrooms. Step 3: Add broth and sour cream. Step 4: Simmer and serve over rice or noodles.",
+      "dietaryRestrictions": null
+    },
+    {
+      "id": "9",
+      "userid": "u1",
+      "name": "Greek Salad",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "Greek",
+      "category": "Lunch",
+      "difficulty": "Easy",
+      "cookingTime": "15 mins",
+      "tags": [
+        "healthy",
+        "gluten-free",
+        "quick"
+      ],
+      "ingredients": [
+        "Cucumber",
+        "Tomatoes",
+        "Red onion",
+        "Feta cheese",
+        "Kalamata olives",
+        "Olive oil, oregano"
+      ],
+      "description": "A fresh and healthy salad. Step 1: Chop veggies. Step 2: Add olives and feta. Step 3: Drizzle olive oil and sprinkle oregano. Toss and serve chilled.",
+      "dietaryRestrictions": "vegetarian"
+    },
+    {
+      "id": "10",
+      "userid": "u1",
+      "name": "Avocado Toast with Egg",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "American",
+      "category": "Breakfast",
+      "difficulty": "Easy",
+      "cookingTime": "10 mins",
+      "tags": [
+        "quick",
+        "vegetarian",
+        "healthy"
+      ],
+      "ingredients": [
+        "2 slices whole grain bread",
+        "1 ripe avocado",
+        "1 egg",
+        "Salt, pepper, chili flakes",
+        "Lemon juice"
+      ],
+      "description": "Perfect start to your day. Step 1: Toast bread. Step 2: Mash avocado with lemon, salt, and pepper. Step 3: Fry or poach egg. Step 4: Assemble and sprinkle chili flakes.",
+      "dietaryRestrictions": "vegetarian"
+    },
+    {
+      "id": "11",
+      "userid": "u1",
+      "name": "Shakshuka",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "Middle Eastern",
+      "category": "Breakfast",
+      "difficulty": "Easy",
+      "cookingTime": "25 mins",
+      "tags": [
+        "eggs",
+        "tomato-based",
+        "healthy"
+      ],
+      "ingredients": [
+        "3 eggs",
+        "1 onion",
+        "1 bell pepper",
+        "2 cups crushed tomatoes",
+        "Garlic, cumin, paprika"
+      ],
+      "description": "A flavorful dish of eggs poached in spicy tomato sauce. Step 1: Sauté onion and pepper. Step 2: Add garlic, spices, and tomatoes. Step 3: Simmer and crack eggs into the sauce. Step 4: Cover and cook until eggs are set.",
+      "dietaryRestrictions": "vegetarian"
+    },
+    {
+      "id": "12",
+      "userid": "u1",
+      "name": "Sushi Rolls",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "Japanese",
+      "category": "Lunch",
+      "difficulty": "Hard",
+      "cookingTime": "60 mins",
+      "tags": [
+        "seafood",
+        "rice",
+        "rolled"
+      ],
+      "ingredients": [
+        "2 cups sushi rice",
+        "Nori sheets",
+        "Cucumber",
+        "Avocado",
+        "Crab sticks or raw fish",
+        "Soy sauce, wasabi"
+      ],
+      "description": "Traditional rolled sushi. Step 1: Cook and season sushi rice. Step 2: Lay nori, spread rice, and add fillings. Step 3: Roll using a mat. Step 4: Slice and serve with soy sauce and wasabi.",
+      "dietaryRestrictions": null
+    },
+    {
+      "id": "13",
+      "userid": "u1",
+      "name": "Falafel Wrap",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "Middle Eastern",
+      "category": "Dinner",
+      "difficulty": "Medium",
+      "cookingTime": "35 mins",
+      "tags": [
+        "vegan",
+        "wrap",
+        "legumes"
+      ],
+      "ingredients": [
+        "1 cup chickpeas",
+        "Onion, garlic, parsley",
+        "Cumin, coriander",
+        "Pita bread",
+        "Tahini sauce, lettuce, tomato"
+      ],
+      "description": "Crispy falafels wrapped in pita. Step 1: Blend chickpeas with herbs and spices. Step 2: Form balls and fry. Step 3: Stuff pita with falafel and veggies. Step 4: Drizzle tahini sauce.",
+      "dietaryRestrictions": "vegan"
+    },
+    {
+      "id": "14",
+      "userid": "u1",
+      "name": "Mac and Cheese",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "American",
+      "category": "Dinner",
+      "difficulty": "Easy",
+      "cookingTime": "25 mins",
+      "tags": [
+        "cheesy",
+        "comfort food",
+        "pasta"
+      ],
+      "ingredients": [
+        "2 cups elbow macaroni",
+        "2 tbsp butter",
+        "2 tbsp flour",
+        "2 cups milk",
+        "2 cups cheddar cheese"
+      ],
+      "description": "Creamy and cheesy pasta. Step 1: Cook macaroni. Step 2: Make roux with butter and flour. Step 3: Add milk and melt cheese. Step 4: Mix with pasta and serve hot.",
+      "dietaryRestrictions": "vegetarian"
+    },
+    {
+      "id": "15",
+      "userid": "u1",
+      "name": "Tandoori Chicken",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K",
+      "cuisine": "Indian",
+      "category": "Dinner",
+      "difficulty": "Medium",
+      "cookingTime": "45 mins",
+      "tags": [
+        "spicy",
+        "grilled",
+        "protein"
+      ],
+      "ingredients": [
+        "4 chicken drumsticks",
+        "Yogurt",
+        "Ginger-garlic paste",
+        "Tandoori masala",
+        "Lemon juice"
+      ],
+      "description": "Flavorful grilled chicken. Step 1: Marinate chicken in yogurt, spices, and lemon. Step 2: Let sit for 4 hours. Step 3: Grill or bake until cooked through. Step 4: Serve with mint chutney.",
+      "dietaryRestrictions": null
+    },
+    {
+      "id": "ca29",
+      "name": "Paneer Butter Masala",
+      "description": "Paneer Butter Masala",
+      "cuisine": "Chinese",
+      "category": "Breakfast",
+      "tags": [
+        "italian",
+        "snack"
+      ],
+      "ingredients": [
+        "paneer",
+        "butter",
+        "masala"
+      ],
+      "cookingTime": "30 mins",
+      "difficulty": "Easy",
+      "dietaryRestrictions": "veg",
+      "userid": "fb5b",
+      "img": "/images/food.svg",
+      "dishdp": "/images/dishdp.svg",
+      "reviews": "5K"
+    }
+  ],
+  "users": [
+    {
+      "id": "u1",
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "email": "alice@example.com",
+      "country": "India",
+      "region": "Kolkata",
+      "password": "123456",
+      "confirpassword": "123456",
+      "favorites": [
+        "3"
+      ]
+    },
+    {
+      "id": "d5df",
+      "firstName": "shrikant",
+      "lastName": "gaikwad",
+      "email": "shrikant@email.com",
+      "country": "India",
+      "region": "Kolkata",
+      "password": "qwerty",
+      "confirmpassword": "qwerty",
+      "favorites": [
+        "4",
+        "1"
+      ]
+    },
+    {
+      "id": "fb5b",
+      "firstName": "Archisman",
+      "lastName": "Deb",
+      "email": "archi@gmail.com",
+      "country": "Australia",
+      "region": "Melbourne",
+      "password": "archi",
+      "confirmpassword": "archi",
+      "favorites": []
+    }
+  ]
+}
